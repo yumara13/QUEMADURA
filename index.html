@@ -1,0 +1,764 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#153747">
+<title>Prevención de quemaduras | TECBA</title>
+
+<style>
+:root {
+    --azul: #153747;
+    --azul-claro: #24576a;
+    --naranja: #ed784b;
+    --crema: #fff8ef;
+    --fondo: #f3f6f7;
+    --texto: #293b43;
+    --blanco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+/* ENCABEZADO */
+
+header {
+    background: var(--azul);
+    color: white;
+    padding: 25px 6%;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    border-bottom: 5px solid var(--naranja);
+}
+
+.logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    background: white;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.institucion h2 {
+    font-size: 23px;
+    letter-spacing: 1px;
+}
+
+.institucion p {
+    font-size: 13px;
+    color: #d9e6eb;
+}
+
+/* PORTADA */
+
+.portada {
+    background: linear-gradient(135deg, #153747, #24576a);
+    color: white;
+    padding: 75px 8%;
+    text-align: center;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: rgba(237,120,75,.18);
+    color: #ffb18f;
+    border: 1px solid #ed784b;
+    padding: 7px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.portada h1 {
+    font-size: clamp(30px, 5vw, 49px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.portada p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 17px;
+    color: #e2edf0;
+}
+
+/* CONTENEDOR */
+
+.contenedor {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 22px;
+}
+
+.seccion {
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 18px rgba(21,55,71,.06);
+}
+
+.numero {
+    color: var(--naranja);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h2.titulo {
+    color: var(--azul);
+    font-size: 27px;
+    margin: 5px 0 17px;
+}
+
+h3 {
+    color: var(--azul);
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 13px;
+}
+
+.destacado {
+    background: var(--crema);
+    border-left: 5px solid var(--naranja);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* IMÁGENES */
+
+.imagen-principal {
+    width: 100%;
+    max-width: 750px;
+    display: block;
+    margin: 25px auto;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    background: #f7f7f7;
+    border-radius: 12px;
+    padding: 8px;
+}
+
+/* TARJETAS */
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.tarjeta {
+    background: #f5f8f9;
+    padding: 23px;
+    border-radius: 12px;
+    border-top: 4px solid var(--naranja);
+}
+
+.tarjeta h3 {
+    font-size: 19px;
+}
+
+/* CAUSAS */
+
+.causas {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 13px;
+    margin-top: 25px;
+}
+
+.causa {
+    background: var(--azul);
+    color: white;
+    text-align: center;
+    padding: 23px 10px;
+    border-radius: 12px;
+}
+
+.letra {
+    font-size: 30px;
+    color: #ff9a72;
+    font-weight: bold;
+}
+
+.causa h3 {
+    color: white;
+    font-size: 15px;
+}
+
+.causa p {
+    font-size: 13px;
+    margin: 0;
+}
+
+/* PASOS */
+
+.pasos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.paso {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background: #f5f8f9;
+    border-radius: 12px;
+}
+
+.paso-numero {
+    min-width: 38px;
+    height: 38px;
+    background: var(--naranja);
+    color: white;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* NO HACER */
+
+.no-hacer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.alerta {
+    background: #fff3ef;
+    border-left: 4px solid #d9534f;
+    padding: 19px;
+    border-radius: 8px;
+}
+
+.alerta h3 {
+    color: #b33c36;
+}
+
+/* RECORDATORIO */
+
+.recordatorio {
+    background: var(--azul);
+    color: white;
+    padding: 35px;
+    border-radius: 15px;
+    margin-top: 25px;
+}
+
+.recordatorio h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.recordatorio strong {
+    color: #ffad89;
+}
+
+/* PIE */
+
+footer {
+    background: var(--azul);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 5px solid var(--naranja);
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 18px;
+        gap: 13px;
+    }
+
+    .logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .institucion h2 {
+        font-size: 17px;
+    }
+
+    .portada {
+        padding: 55px 22px;
+    }
+
+    .portada p {
+        font-size: 15px;
+    }
+
+    .contenedor {
+        margin: 22px auto;
+        padding: 0 13px;
+    }
+
+    .seccion {
+        padding: 23px 18px;
+    }
+
+    h2.titulo {
+        font-size: 23px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .causas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pasos {
+        grid-template-columns: 1fr;
+    }
+
+    .no-hacer {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria img {
+        height: auto;
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 380px) {
+    .institucion h2 {
+        font-size: 15px;
+    }
+
+    .causas {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="TECBA.png" alt="Logotipo TECBA" class="logo">
+    <div class="institucion">
+        <h2>TECNOLÓGICO BOLIVIANO ALEMÁN</h2>
+        <p>Formación técnica y tecnológica</p>
+    </div>
+</header>
+
+<section class="portada">
+    <span class="etiqueta">GUÍA EDUCATIVA Y PREVENTIVA</span>
+    <h1>PREVENCIÓN DE QUEMADURAS<br>Y CUIDADOS ANTE LESIONES</h1>
+    <p>
+        Información sencilla para reconocer riesgos,
+        prevenir accidentes y saber cómo actuar inicialmente.
+    </p>
+</section>
+
+<main class="contenedor">
+
+<!-- INTRODUCCIÓN -->
+
+<section class="seccion">
+    <span class="numero">Información importante</span>
+    <h2 class="titulo">¿De qué trata esta guía?</h2>
+    <p>
+        Es un material educativo y preventivo.
+        No es una rutina de ejercicios ni un programa de
+        rehabilitación. Su objetivo es ayudar a reconocer
+        situaciones de riesgo y conocer medidas iniciales seguras.
+    </p>
+</section>
+
+<!-- PIEL -->
+
+<section class="seccion">
+    <span class="numero">01 · Conocimiento</span>
+    <h2 class="titulo">Conoce tu piel</h2>
+
+    <p>
+        La piel es la cubierta externa del cuerpo. Actúa como
+        barrera protectora y ayuda a proteger los tejidos frente
+        al ambiente. Una quemadura puede afectar la piel y,
+        según su profundidad y extensión, también los tejidos
+        que se encuentran debajo.
+    </p>
+
+    <img src="QUEMADURA1.png"
+         alt="Esquema educativo de las capas de la piel"
+         class="imagen-principal">
+
+    <div class="tarjetas">
+
+        <article class="tarjeta">
+            <h3>EPIDERMIS</h3>
+            <p>
+                Es la capa más externa. Está en contacto directo
+                con el ambiente.
+            </p>
+        </article>
+
+        <article class="tarjeta">
+            <h3>DERMIS</h3>
+            <p>
+                Capa situada debajo de la epidermis; contiene
+                estructuras que contribuyen a las funciones de la piel.
+            </p>
+        </article>
+
+        <article class="tarjeta">
+            <h3>HIPODERMIS</h3>
+            <p>
+                Tejido ubicado bajo la dermis, con presencia
+                importante de tejido graso.
+            </p>
+        </article>
+
+    </div>
+
+    <div class="destacado">
+        <h3>¿POR QUÉ IMPORTA?</h3>
+        <p>
+            La profundidad y la extensión de una quemadura
+            influyen en su gravedad y en la atención que puede necesitar.
+        </p>
+    </div>
+</section>
+
+<!-- CAUSAS -->
+
+<section class="seccion">
+    <span class="numero">02 · Identificación</span>
+    <h2 class="titulo">¿Qué puede causar una quemadura?</h2>
+
+    <p>
+        Existen diferentes agentes que pueden producir quemaduras.
+        Es importante reconocerlos para prevenir accidentes.
+    </p>
+
+    <div class="causas">
+
+        <article class="causa">
+            <div class="letra">T</div>
+            <h3>TÉRMICAS</h3>
+            <p>Calor, vapor o líquidos calientes.</p>
+        </article>
+
+        <article class="causa">
+            <div class="letra">Q</div>
+            <h3>QUÍMICAS</h3>
+            <p>Sustancias corrosivas.</p>
+        </article>
+
+        <article class="causa">
+            <div class="letra">E</div>
+            <h3>ELÉCTRICAS</h3>
+            <p>Corriente eléctrica.</p>
+        </article>
+
+        <article class="causa">
+            <div class="letra">R</div>
+            <h3>RADIACIÓN</h3>
+            <p>Exposición a radiaciones.</p>
+        </article>
+
+        <article class="causa">
+            <div class="letra">F</div>
+            <h3>FRICCIÓN</h3>
+            <p>Roce intenso.</p>
+        </article>
+
+    </div>
+
+    <div class="destacado">
+        <h3>SITUACIONES DE RIESGO</h3>
+        <p>
+            Pueden ocurrir en la cocina, el baño, el trabajo
+            o espacios comunitarios. Los líquidos calientes,
+            el vapor, las superficies calientes, la electricidad
+            y algunos productos químicos son ejemplos de peligros cotidianos.
+        </p>
+    </div>
+</section>
+
+<!-- PREVENCIÓN -->
+
+<section class="seccion">
+    <span class="numero">03 · Seguridad</span>
+    <h2 class="titulo">Prevención en la vida cotidiana</h2>
+
+    <p>
+        La mayoría de las quemaduras pueden prevenirse.
+        Identificar los riesgos y adoptar hábitos seguros
+        ayuda a reducir accidentes.
+    </p>
+
+    <div class="tarjetas">
+
+        <article class="tarjeta">
+            <h3>EN LA COCINA</h3>
+            <p>
+                Mantén los mangos de las ollas hacia adentro.
+                Aleja a niñas y niños de líquidos y superficies calientes.
+            </p>
+        </article>
+
+        <article class="tarjeta">
+            <h3>EN EL HOGAR</h3>
+            <p>
+                Revisa cables y enchufes. Evita sobrecargar
+                las conexiones eléctricas.
+            </p>
+        </article>
+
+        <article class="tarjeta">
+            <h3>CON QUÍMICOS</h3>
+            <p>
+                Conserva los productos en sus envases identificados
+                y evita el contacto directo.
+            </p>
+        </article>
+
+    </div>
+
+    <div class="destacado">
+        <h3>AL SOL Y ANTE LA RADIACIÓN</h3>
+        <p>
+            Reduce las exposiciones innecesarias y sigue
+            las recomendaciones de protección apropiadas.
+        </p>
+    </div>
+</section>
+
+<!-- PRIMEROS AUXILIOS -->
+
+<section class="seccion">
+    <span class="numero">04 · Actuación inicial</span>
+    <h2 class="titulo">¿Qué hacer inicialmente ante una quemadura?</h2>
+
+    <p>
+        La actuación inicial debe priorizar detener el proceso
+        de quemadura, enfriar la zona y proteger a la persona.
+    </p>
+
+    <div class="pasos">
+
+        <article class="paso">
+            <div class="paso-numero">1</div>
+            <div>
+                <h3>Detén la causa</h3>
+                <p>
+                    Aleja a la persona de la fuente de calor o del
+                    agente que está provocando la lesión, siempre
+                    que puedas hacerlo sin ponerte en peligro.
+                </p>
+            </div>
+        </article>
+
+        <article class="paso">
+            <div class="paso-numero">2</div>
+            <div>
+                <h3>Enfría la zona</h3>
+                <p>
+                    Utiliza agua corriente fresca sobre la zona
+                    afectada. No uses hielo.
+                </p>
+            </div>
+        </article>
+
+        <article class="paso">
+            <div class="paso-numero">3</div>
+            <div>
+                <h3>Protege a la persona</h3>
+                <p>
+                    Evita manipular innecesariamente la lesión
+                    y procura que la persona esté segura mientras recibe ayuda.
+                </p>
+            </div>
+        </article>
+
+        <article class="paso">
+            <div class="paso-numero">4</div>
+            <div>
+                <h3>Busca atención sanitaria</h3>
+                <p>
+                    Si la quemadura parece grave, es extensa
+                    o tienes dudas, solicita valoración profesional
+                    sin demora.
+                </p>
+            </div>
+        </article>
+
+    </div>
+
+    <div class="recordatorio">
+        <h2>RECUERDA</h2>
+        <p>
+            El enfriamiento con agua corriente fresca es una
+            medida inicial recomendada por la OMS, según el
+            documento base. No retrases la atención profesional
+            cuando sea necesaria.
+        </p>
+    </div>
+</section>
+
+<!-- EVITAR -->
+
+<section class="seccion">
+    <span class="numero">05 · Precauciones</span>
+    <h2 class="titulo">¿Qué NO debes hacer?</h2>
+
+    <div class="no-hacer">
+
+        <article class="alerta">
+            <h3>✕ NO APLIQUES HIELO</h3>
+            <p>
+                Puede agravar la lesión.
+            </p>
+        </article>
+
+        <article class="alerta">
+            <h3>✕ NO USES ACEITES</h3>
+            <p>
+                Evita aplicar aceites sobre la quemadura.
+            </p>
+        </article>
+
+        <article class="alerta">
+            <h3>✕ NO USES REMEDIOS CASEROS</h3>
+            <p>
+                No coloques sustancias o preparados caseros
+                sobre la zona afectada.
+            </p>
+        </article>
+
+        <article class="alerta">
+            <h3>✕ NO RETRASES LA AYUDA</h3>
+            <p>
+                No sustituyas la valoración sanitaria
+                por consejos informales.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<!-- IDEAS CLAVE -->
+
+<section class="seccion">
+    <span class="numero">06 · Repaso</span>
+    <h2 class="titulo">Ideas clave para recordar</h2>
+
+    <div class="tarjetas">
+
+        <article class="tarjeta">
+            <h3>PREVENIR</h3>
+            <p>
+                Identifica riesgos en el hogar, el trabajo
+                y la comunidad.
+            </p>
+        </article>
+
+        <article class="tarjeta">
+            <h3>ACTUAR</h3>
+            <p>
+                Detén la causa, enfría con agua corriente
+                fresca y protege a la persona.
+            </p>
+        </article>
+
+        <article class="tarjeta">
+            <h3>EVITAR</h3>
+            <p>
+                No apliques hielo, aceites ni remedios caseros.
+            </p>
+        </article>
+
+    </div>
+
+    <div class="destacado">
+        <h3>CONSULTAR</h3>
+        <p>
+            Busca atención sanitaria cuando la gravedad
+            de la lesión lo requiera o tengas dudas.
+        </p>
+    </div>
+</section>
+
+<!-- IMÁGENES FINALES -->
+
+<section class="seccion">
+    <span class="numero">Material complementario</span>
+    <h2 class="titulo">Galería educativa</h2>
+
+    <p>
+        Imágenes complementarias sobre la prevención
+        de quemaduras y los cuidados ante lesiones.
+    </p>
+
+    <div class="galeria">
+
+        <img src="QUEMADURA2.png"
+             alt="Imagen educativa complementaria sobre quemaduras">
+
+        <img src="QUEMADURA3.png"
+             alt="Imagen educativa complementaria sobre prevención">
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <h3 style="color:white;">TECNOLÓGICO BOLIVIANO ALEMÁN</h3>
+    <p>Educación · Prevención · Seguridad</p>
+    <p>Material educativo y preventivo</p>
+</footer>
+
+</body>
+</html>
